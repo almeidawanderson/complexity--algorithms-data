@@ -10,5 +10,21 @@ const r = usuarios.map((user) => {
      return `${user.nome} ${user.sobreNome}`;
 })
 
-console.log(r)
+// console.log(r)
 
+const produtos = [
+  {nome: 'teclado', preco: 15000},
+  {nome: 'mouse', preco: 7550},
+  {nome: 'mouse', preco: 7550},
+  {nome: 'mouse', preco: 7550},
+]
+
+// 15000 -> 150.00
+const produtosFormatados = produtos.map((produto) => {
+  return {
+    nome: produto.nome,
+    preco: (produto.preco / 100).toFixed(2)
+  }
+})
+
+console.log(produtosFormatados)
