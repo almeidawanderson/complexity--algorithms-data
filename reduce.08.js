@@ -12,6 +12,7 @@ const pessoas = [
 ]
 
 const pessoasPorIdade =  pessoas.reduce((pessoasIdade, pessoaAtual) => {
+  
   // Verifica se a idade já existe no acumulador
     if(pessoasIdade[pessoaAtual.idade]){
     // Se existir, adiciona o nome da pessoa atual ao array correspondente
