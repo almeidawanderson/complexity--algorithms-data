@@ -6,14 +6,22 @@ const alunos = [
   { nome: "Elisa", media: 5.5, rendaFamiliar: 1500 },
 ];
 
-const allowed = alunos.filter((aluno) => {
-  if(aluno.media >= 7.00 && aluno.rendaFamiliar <= 1500) {
-    console.log(`O aluno foi aprovado e tem direito à bolsa: ${aluno.nome}`);
-  } else {
-    aluno.media >= 7.00 && aluno.rendaFamiliar > 1500
-     console.log(`O aluno foi aprovado, mas não tem direito à bolsa: ${aluno.nome}`)
-  }
+const allowedWithBolsa = alunos
+      .filter(aluno => aluno.media >= 7.00)
+      .map(aluno => {
+        let bolsa;
 
-})
+        if(aluno.rendaFamiliar <= 1500){
+          bolsa = "Com direito a bolsa"
+        } else {
+          bolsa = "Sem direito a bolsa"
+        }
 
+        return {
+          nome: aluno.nome,
+          media: "Aprovado  ",
+          bolsa: bolsa
+        }
+      })
 
+console.log("Alunos aprovados:", allowedWithBolsa);
