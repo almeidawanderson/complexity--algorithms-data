@@ -10,6 +10,24 @@ const data = [
   { nome: 'Chave do carro', local: 'entrada', status: 'pai' },
 ];
 
+const cleanHouseReduce = data.reduce((acumulador, item) => {
+  if (!acumulador[item.status]) {
+    acumulador[item.status] = { local: item.local, filho: [], pai: [], esposa: [] };
+  }
+
+  if (item.status === 'filho') {
+    acumulador[item.status].filho.push(item.nome);
+  } else if (item.status === 'pai') {
+    acumulador[item.status].pai.push(item.nome);
+  } else if (item.status === 'esposa') {
+    acumulador[item.status].esposa.push(item.nome);
+  }
+
+  return acumulador;
+}, {})
+
+console.log(cleanHouseReduce);
+
 const cleanHouse = data.map((item) => {
   let item_filho = [];
   let item_pai = [];
@@ -31,4 +49,3 @@ const cleanHouse = data.map((item) => {
   };
 });
 
-console.log(cleanHouse);
