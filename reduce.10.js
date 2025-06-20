@@ -18,3 +18,16 @@ const activeUsers = users.reduce((acumulador, user) => {
 }, {});
 
 console.log(activeUsers);
+
+// validar quantos ativos e inativos:
+
+const activeCount = users.reduce((count, user) => {
+  if (user.active === 'ativo') {
+    count.ativos += 1;
+  } else {
+    count.inativos += 1;
+  }
+  return count;
+}, { ativos: 0, inativos: 0 });
+
+console.log(activeCount);
