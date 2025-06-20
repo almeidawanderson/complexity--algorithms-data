@@ -13,10 +13,10 @@ const r = usuarios.map((user) => {
 // console.log(r)
 
 const produtos = [
-  {nome: 'teclado', preco: 15000},
-  {nome: 'mouse', preco: 7550},
-  {nome: 'mouse', preco: 7550},
-  {nome: 'mouse', preco: 7550},
+  {id: 1, nome: 'teclado', preco: 15000},
+  {id: 2, nome: 'mouse', preco: 7550},
+  {id: 3, nome: 'mouse', preco: 7550},
+  {id: 4, nome: 'mouse', preco: 7550},
 ]
 
 // 15000 -> 150.00
@@ -27,4 +27,21 @@ const produtosFormatados = produtos.map((produto) => {
   }
 })
 
-console.log(produtosFormatados)
+//console.log(produtosFormatados)
+
+const funcionarios = [
+  {nome: 'João', salario: 3000},
+  {nome: 'Maria', salario: 4000},
+  {nome: 'Pedro', salario: 5000},
+  {nome: 'Ana', salario: 6000}
+]
+
+const aumentoFuncionario = funcionarios.map((funcionario) => {
+  const aplicarAumento = funcionario.salario * 0.1
+  return {
+    ...funcionario,
+    salario: funcionario.salario + aplicarAumento
+  }
+})
+
+console.log(aumentoFuncionario)
